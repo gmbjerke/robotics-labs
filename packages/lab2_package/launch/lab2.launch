@@ -1,0 +1,11 @@
+<launch>
+	
+	<group ns="$(env VEHICLE_NAME)">
+		<node name="lab2" type="lab2.py" pkg="lab2_package"/>
+	</group>
+	
+	<include file="$(find fsm)/launch/fsm_node.launch">
+		<arg name="veh" value="$(env VEHICLE_NAME)"/>
+		<arg name"param_file_name" value="lane_following"/>
+	</include>
+</launch>
